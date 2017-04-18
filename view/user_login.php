@@ -1,4 +1,4 @@
-<form class="form-horizontal" action="/user/dologin" method="post">
+<form class="form-horizontal" action="/user/doLogin" method="post">
     <div class="component" data-html="true">
         <div class="form-group">
             <label class="col-md-2 control-label" for="textinput">Mail</label>

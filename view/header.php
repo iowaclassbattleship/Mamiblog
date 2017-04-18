@@ -12,6 +12,7 @@
 
     <!-- Custom styles for this template -->
     <link href="/css/style.css" rel="stylesheet">
+      <link href="/js/javascript.js" rel="script">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -20,6 +21,7 @@
     <![endif]-->
   </head>
   <body>
+
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -33,16 +35,14 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><a href="/">Home</a></li>
             <li><a href="/user">Benutzer</a></li>
             <li><a href="/user/create">Benutzer erstellen</a></li>
-            <li><a href="/user/login">Login</a></li>
-
+              <li><a href="/user/login">Login</a></li>
+              <li><a href="/blog/index">Blogs</a></li>
+              <li><a href="/blog/create">blog erstellen</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
-
     <div class="container">
-
     <h1><?= $heading ?></h1>

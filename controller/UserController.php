@@ -56,7 +56,7 @@ class UserController
         $view->heading = 'Benutzer login';
         $view->display();
     }
-    public function dologin()
+    public function doLogin()
     {
         if ($_POST['send']) {
             $email = $_POST['email'];
@@ -67,4 +67,7 @@ class UserController
         }
 
     }
+
+
+
 }

@@ -38,7 +38,9 @@ class UserRepository extends Repository
         $statement->bind_param('ssss', $firstName, $lastName, $email, $password);
 
         if (!$statement->execute()) {
+            echo'Es existiert schon ein User mit dieser Email-adresse.';
             throw new Exception($statement->error);
+
         }
 
         return $statement->insert_id;
@@ -56,11 +58,14 @@ class UserRepository extends Repository
         $results = $result->fetch_array();
 
         if($sha1pass == $results["password"]){
-            echo'erfolgrecih';
+            echo'erfolg Reich';
         }
         else{
-            echo'nicht erfolgreicht';
+            echo'fehler geschlagen';
         }
+
+    }
+    public function showblog(){
 
     }
 }

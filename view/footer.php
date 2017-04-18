@@ -1,6 +1,6 @@
         <hr>
         <footer>
-          <p>&copy; ICT Berufsbildungcenter AG 2016</p>
+          <p>&copy; Dominic Droz & Marc Schläpfer 2017</p>
         </footer>
     </div>
 

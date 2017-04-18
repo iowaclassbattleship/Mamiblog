@@ -1,16 +1,16 @@
 <article class="hreview open special">
-	<?php if (empty($users)): ?>
+	<?php if (empty($entry)): ?>
     <div class="dhd">
-        <h2 class="item title">Hoopla! Keine User gefunden.</h2>
+        <h2 class="item title">Hoopla! no entries found.</h2>
     </div>
 <?php else: ?>
-    <?php foreach ($users as $user): ?>
+    <?php foreach ($entry as $entries): ?>
         <div class="panel panel-default">
-            <div class="panel-heading"><?= $user->firstName;?> <?= $user->lastName;?></div>
+            <div class="panel-heading"> <?= $entries->title ;?> </div>
             <div class="panel-body">
-                <p class="description">In der Datenbank existiert ein User mit dem Namen <?= $user->firstName;?> <?= $user->lastName;?>. Dieser hat die EMail-Adresse: <a href="mailto:<?= $user->email;?>"><?= $user->email;?></a></p>
+                <img src="<?php echo $entries->picture ?>" alt="image" >
                 <p>
-                    <a title="Löschen" href="/user/delete?id=<?= $user->id ?>">Löschen</a>
+                    <a title="Löschen">Löschen</a>
                 </p>
             </div>
         </div>

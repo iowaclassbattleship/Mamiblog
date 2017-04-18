@@ -1,2 +1,2 @@
 <?php
-require_once 'global_blogs.php';
+require_once 'blog_index.php';

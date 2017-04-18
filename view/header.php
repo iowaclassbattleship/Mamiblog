@@ -38,7 +38,7 @@
             <li><a href="/user">Benutzer</a></li>
             <li><a href="/user/create">Benutzer erstellen</a></li>
               <li><a href="/user/login">Login</a></li>
-              <li><a href="/blog/index">Blogs</a></li>
+              <li><a href="/blog">Blogs</a></li>
               <li><a href="/blog/create">blog erstellen</a></li>
           </ul>
         </div><!--/.nav-collapse -->

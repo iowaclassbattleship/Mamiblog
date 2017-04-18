@@ -11,7 +11,7 @@ class BlogController
 
         $view->title = 'Blog';
         $view->heading = 'Blog';
-        $view->users = $blogRepository->readAll();
+        $view->entry = $blogRepository->readAll();
         $view->display();
     }
     public function create()
@@ -49,6 +49,7 @@ class BlogController
             }
 
         }
+        header('Location: /blog');
     }
 
 }

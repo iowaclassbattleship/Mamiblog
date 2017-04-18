@@ -1,6 +1,6 @@
 
 
-<form class="form-horizontal" action="/user/doCreateBlog" method="post" enctype="multipart/form-data">
+<form class="form-horizontal" action="/blog/doCreate" method="post" enctype="multipart/form-data">
     <div class="component" data-html="true">
         <div class="form-group">
             <label class="col-md-2 control-label" for="picture">Picture</label>

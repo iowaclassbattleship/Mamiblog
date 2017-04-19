@@ -31,15 +31,15 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">Bbc MVC</a>
+          <a class="navbar-brand" href="/">Mamiblog</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><a href="/user">Benutzer</a></li>
-            <li><a href="/user/create">Benutzer erstellen</a></li>
+            <li><a href="/user">User</a></li>
+            <li><a href="/user/create">Register</a></li>
               <li><a href="/user/login">Login</a></li>
-              <li><a href="/blog">Blogs</a></li>
-              <li><a href="/blog/create">blog erstellen</a></li>
+              <li><a href="/blog">Submissions</a></li>
+              <li><a href="/blog/create">Upload</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

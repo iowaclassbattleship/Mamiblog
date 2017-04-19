@@ -11,7 +11,7 @@
                 <img src="<?php echo $entries->picture ?>" alt="image" >
                 <p>uploaded by: <?= $entries->creator ;?> </p>
                 <p>
-                    <a title="Löschen" href="/blog/delete?id=<?= $entries->id ?>">Löschen</a>
+                    <a title="delete" href="/blog/delete?id=<?= $entries->id ?>">delete</a>
                 </p>
             </div>
         </div>

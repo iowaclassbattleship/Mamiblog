@@ -31,6 +31,7 @@ class BlogController
             $ext = pathinfo($_FILES['picture']['name'], PATHINFO_EXTENSION);
             $title = htmlspecialchars($_POST['title']);
             $date = date("Y.m.d");
+
             $creator = $_SESSION['user'];
 
             $blogRepository = new BlogRepository();

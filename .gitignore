@@ -4,6 +4,7 @@ config.php
 
 # User-specific stuff:
 .idea/**/workspace.xml
+.idea/**/workspace.xml*
 .idea/**/tasks.xml
 .idea/dictionaries
 
@@ -54,7 +55,8 @@ fabric.properties
 
 
 # Project ignores
-public\images\uploads\*
+public/images/uploads/*
+!public/images/uploads/.gitkeep
 
 
 

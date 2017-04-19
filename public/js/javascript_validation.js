@@ -1,29 +1,13 @@
 $(document).ready(function() {
-    var mailRegex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    var nameRegex = /^[a-zA-Z]+$/;
+    var mailRegex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{1,}))$/;
     var pwdRegex = /^([A-Za-z]{8,})\w+$/;
 
-    $('#firstName').keyup(function () {
-       var firstNameValue = $('#firstName').val();
-        if(!firstNameValue.match(nameRegex)){
-            $('#firstName').css('background-color', '#ffcccc');
-        }
-        else {
-            $('#firstName').css('background-color', '#b3ffb3');
-        }
-    });
+    /*
+        Validierung von E-Mail und Passworteingabe
+        Bei Eingaben die nicht den Richtlinien entsprechen wird das Eingabefeld rot gefärbt
+     */
 
-    $('#lastName').keyup(function () {
-        var firstNameValue = $('#lastName').val();
-        if(!firstNameValue.match(nameRegex)){
-            $('#lastName').css('background-color', '#ffcccc');
-        }
-        else {
-            $('#lastName').css('background-color', '#b3ffb3');
-        }
-    });
-
-    $('#email').keyup(function () {
+    function validateEmail() {
         var emailValue = $('#email').val();
         if(!emailValue.match(mailRegex)){
             $('#email').css('background-color', '#ffcccc');
@@ -31,9 +15,12 @@ $(document).ready(function() {
         else {
             $('#email').css('background-color', '#b3ffb3');
         }
-    });
+    }
 
-    $('#password').keyup(function () {
+    $('#email').keypress(validateEmail);
+    $('#email').change(validateEmail);
+
+    function validatePassword () {
         var passwordValue = $('#password').val();
         if(!passwordValue.match(pwdRegex)){
             $('#password').css('background-color', '#ffcccc');
@@ -41,7 +28,10 @@ $(document).ready(function() {
         else {
             $('#password').css('background-color', '#b3ffb3');
         }
-    });
+    }
+
+    $('#password').keypress(validatePassword);
+    $('#password').change(validatePassword);
 });
 
 

@@ -58,7 +58,8 @@ class UserRepository extends Repository
         $results = $result->fetch_array();
 
         if($sha1pass == $results["password"]){
-            echo'erfolg Reich';
+            $_SESSION['user']= $email;
+            header('Location: /blog');
         }
         else{
             echo'fehler geschlagen';

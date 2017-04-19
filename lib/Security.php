@@ -25,7 +25,6 @@ class Security
                 return true;
             }
             else{
-                echo'falsch';
                 return false;
 
             }

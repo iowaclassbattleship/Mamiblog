@@ -2,6 +2,11 @@ $(document).ready(function() {
     var mailRegex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{1,}))$/;
     var pwdRegex = /^([A-Za-z]{8,})\w+$/;
 
+    /*
+        Validierung von E-Mail und Passworteingabe
+        Bei Eingaben die nicht den Richtlinien entsprechen wird das Eingabefeld rot gefärbt
+     */
+
     function validateEmail() {
         var emailValue = $('#email').val();
         if(!emailValue.match(mailRegex)){

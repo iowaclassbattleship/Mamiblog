@@ -11,7 +11,7 @@ class BlogController
 
         $view->title = 'Blog';
         $view->heading = 'Blog';
-        $view->entry = $blogRepository->readAll();
+        $view->entry = $blogRepository->readAllSortedByNewest();
         $view->display();
     }
     public function create()
@@ -30,7 +30,7 @@ class BlogController
             $picture = $destination.'/';
             $ext = pathinfo($_FILES['picture']['name'], PATHINFO_EXTENSION);
             $title = htmlspecialchars($_POST['title']);
-            $date = date("Y.m.d");
+            $date = date("Y-m-d");
 
             $creator =  Security::getUser()->email;
 

@@ -12,14 +12,14 @@
                 <img src="<?php echo $entries->picture ?>" alt="image" >
                 <p>uploaded by: <?= $entries->creator ;?> </p>
 
-                <?php if(Security::isAuthenticated() && Security::getUser()->email == $entries->creator) : ?>
+                <?php if((Security::isAuthenticated() && Security::getUser()->email == $entries->creator) || Security::isAdmin()){ ?>
                 <p>
                     <a title='delete' href='/blog/delete?id=<?=$entries->id?>'>delete</a>
                 </p>
-                <?php endif; ?>
+                <?php } ?>
             </div>
         </div>
-                <?php endif ?>
+                <?php endif; ?>
     <?php endforeach ?>
 <?php endif ?>
 </article>

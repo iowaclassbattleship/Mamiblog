@@ -14,9 +14,10 @@
                         <p>
                             <a title='delete' href='/blog/privatedelete?id=<?=$entries->id?>'>delete</a>
                         </p>
-                    <?php endif; ?>
+
                 </div>
             </div>
+            <?php endif; ?>
     <?php endforeach ?>
-<?php endif ?>
+    <?php endif ?>
 </article>

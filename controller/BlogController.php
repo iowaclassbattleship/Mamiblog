@@ -32,7 +32,7 @@ class BlogController
             $title = htmlspecialchars($_POST['title']);
             $date = date("Y.m.d");
 
-            $creator = $_SESSION['user'];
+            $creator =  Security::getUser()->email;
 
             $blogRepository = new BlogRepository();
 

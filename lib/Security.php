@@ -20,13 +20,16 @@ class Security
     }
 
     public static function isAdmin(){
-        if ($_SESSION[Security::SESSION_USER]->email==Security::ADMIN){
-            return true;
-        }
-        else{
-            echo'falsch';
-            return false;
+        if (isset($_SESSION[Security::SESSION_USER])){
+            if ($_SESSION[Security::SESSION_USER]->email==Security::ADMIN){
+                return true;
+            }
+            else{
+                echo'falsch';
+                return false;
 
+            }
         }
+
     }
 }

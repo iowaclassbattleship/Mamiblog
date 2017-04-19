@@ -6,9 +6,10 @@
 <?php else: ?>
     <?php foreach ($entry as $entries): ?>
         <div class="panel panel-default">
-            <div class="panel-heading"> <?= $entries->title ;?> </div>
+            <div class="panel-heading"> <?= $entries->title ;?>  <p>Date: <?= $entries->date ?></p></div>
             <div class="panel-body">
                 <img src="<?php echo $entries->picture ?>" alt="image" >
+                <p>uploaded by: <?= $entries->creator ;?> </p>
                 <p>
                     <a title="Löschen" href="/blog/delete?id=<?= $entries->id ?>">Löschen</a>
                 </p>

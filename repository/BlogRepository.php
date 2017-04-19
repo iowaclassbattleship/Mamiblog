@@ -5,11 +5,12 @@ class BlogRepository extends Repository
 {
     protected $tableName = 'blog';
 
-    public function upload($picture, $title, $date, $comments){
-        $query = "INSERT INTO $this->tableName (picture, title, date, comments) VALUES (?, ?, ?, ?)";
+    public function upload($picture, $title, $date, $creator){
+        $query = "INSERT INTO $this->tableName (picture, title, date, creator) VALUES (?, ?, ?, ?)";
 
         $statement = ConnectionHandler::getConnection()->prepare($query);
-        $statement->bind_param('ssss', $picture, $title, $date, $comments);
+
+        $statement->bind_param('ssss', $picture, $title, $date, $creator);
 
         if (!$statement->execute()) {
             return false;

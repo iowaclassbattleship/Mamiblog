@@ -29,16 +29,13 @@ class BlogController
             $picture_array = $_FILES['picture'];
             $picture = $destination.'/';
             $ext = pathinfo($_FILES['picture']['name'], PATHINFO_EXTENSION);
-
-
-
-            $title = $_POST['title'];
+            $title = htmlspecialchars($_POST['title']);
             $date = date("Y.m.d");
-            $comments = "";
+            $creator = $_SESSION['user'];
 
             $blogRepository = new BlogRepository();
 
-            $insertId = $blogRepository->upload($picture, $title, $date, $comments);
+            $insertId = $blogRepository->upload($picture, $title, $date, $creator);
 
             if($insertId > 0)
             {

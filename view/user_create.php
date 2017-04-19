@@ -27,23 +27,10 @@
 		<div class="form-group">
 	      <label class="col-md-2 control-label" for="send">&nbsp;</label>
 		  <div class="col-md-4">
-		    <input id="send" name="send" type="submit" class="btn btn-primary">
+		    <input id="send" value="Submit" name="send" type="submit" class="btn btn-primary">
 		  </div>
 		</div>
 	</div>
 </form>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script language="javascript" type="text/javascript" src="/js/javascript_validation.js"></script>
-
-<?php
-/*
-    echo
-        "
-        <script language='JavaScript'>
-            function validate_registration() {
-                if (document.getElementById("firstName"))
-            }
-        </script>
-        ";
-*/
-?>

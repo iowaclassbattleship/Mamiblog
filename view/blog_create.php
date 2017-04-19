@@ -3,13 +3,13 @@
         <div class="form-group">
             <label class="col-md-2 control-label" for="picture">Picture</label>
             <div class="col-md-4">
-                <input id="picture" name="picture" type="file" placeholder="Picture" required>
+                <input id="picture" name="picture" type="file" placeholder="Picturee" >
             </div>
         </div>
         <div class="form-group">
             <label class="col-md-2 control-label" for="comment">Title</label>
             <div class="col-md-4">
-                <input id="title" name="title" type="textarea" placeholder="Title" rows="4" cols="50" required>
+                <input id="title" name="title" type="textarea" placeholder="Title" rows="4" cols="50">
             </div>
         </div>
         <div class="form-group">

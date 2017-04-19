@@ -51,17 +51,5 @@ class BlogController
         }
         header('Location: /blog');
     }
-    public function delete()
-    {
-        $blogRepository = new BlogRepository();
-        $path = $blogRepository->get_picture_path($_GET['id']);
-
-        if($blogRepository->deleteById($_GET['id'])){
-            unlink($path);
-
-        }
-        // Anfrage an die URI /user weiterleiten (HTTP 302)
-        header('Location: /blog');
-    }
 
 }

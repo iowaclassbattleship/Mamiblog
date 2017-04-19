@@ -3,8 +3,9 @@ $(document).ready(function() {
     var pwdRegex = /^([A-Za-z]{8,})\w+$/;
 
     /*
-        Validierung von E-Mail und Passworteingabe
-        Bei Eingaben die nicht den Richtlinien entsprechen wird das Eingabefeld rot gefärbt
+        Validierung von E-Mail und Passworteingabe.
+        Bei Eingaben die nicht den Richtlinien entsprechen wird das Eingabefeld rot gefärbt.
+        Entsprechen sie den Richtlinien werden die Felder grün gefärbt.
      */
 
     function validateEmail() {

@@ -10,3 +10,15 @@ body {
   float: right;
   float: right;
 }
+
+.panel-body {
+
+}
+
+.poster_date {
+   opacity: 0.5;
+}
+
+img {
+    width: 100%;
+}

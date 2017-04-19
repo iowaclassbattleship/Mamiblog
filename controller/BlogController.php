@@ -9,8 +9,8 @@ class BlogController
 
         $view = new View('blog_index');
 
-        $view->title = 'Blog';
-        $view->heading = 'Blog';
+        $view->title = '';
+        $view->heading = '';
         $view->entry = $blogRepository->readAllSortedByNewest();
         $view->display();
     }

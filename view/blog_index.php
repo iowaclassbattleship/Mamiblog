@@ -1,4 +1,5 @@
 <article class="hreview open special">
+    <link rel="stylesheet" href="/css/style.css">
 	<?php if (empty($entry)): ?>
     <div class="dhd">
         <h2 class="item title">Hoopla! no entries found.</h2>
@@ -7,10 +8,10 @@
     <?php foreach ($entry as $entries): ?>
             <?php if (!$entries->private): ?>
         <div class="panel panel-default">
-            <div class="panel-heading"> <?= $entries->title ;?>  <p>Date: <?= $entries->date ?></p></div>
+            <div class="panel-heading"><h1><?= $entries->title ;?></h1><p class="poster_date">Date: <?= $entries->date ?></p></div>
             <div class="panel-body">
                 <img src="<?php echo $entries->picture ?>" alt="image" >
-                <p>uploaded by: <?= $entries->creator ;?> </p>
+                <p class="poster_date">uploaded by: <?= $entries->creator ;?> </p>
 
                 <?php if((Security::isAuthenticated() && Security::getUser()->email == $entries->creator) || Security::isAdmin()){ ?>
                 <p>

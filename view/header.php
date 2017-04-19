@@ -9,9 +9,8 @@
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="/css/style.css">
     <!-- Custom styles for this template -->
-    <link href="/css/style.css" rel="stylesheet">
       <link href="/js/javascript.js" rel="script">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -20,9 +19,8 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <?php
-  if(isset($_SESSION['user'])){
-      echo'<nav class="navbar navbar-inverse navbar-fixed-top">
+  <?php if(isset($_SESSION['user'])) : ?>
+      <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -39,12 +37,14 @@
               <li><a href="/blog/privateBlog">Your Submissions</a></li>
               <li><a href="/blog/create">upload</a></li>
               <li><a href="/user/logout">Logout</a></li>
+              <li id="navright"><a id="username">User: <?= Security::getUser()->email ?></a></li>
           </ul>
-        </div><!--/.nav-collapse -->
+        </div>
+        
       </div>
-    </nav>';
-  }else{
-      echo'<nav class="navbar navbar-inverse navbar-fixed-top">
+    </nav>
+  <?php else: ?>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
 
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
@@ -63,8 +63,8 @@
           </ul>
         </div><!--/.nav-collapse -->
       </div>
-    </nav>';
-  }?>
+    </nav>
+  <?php endif; ?>
 
   </nav>
   <div class="container">

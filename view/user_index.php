@@ -9,7 +9,7 @@
 				<div class="panel-heading"><?= $user->firstName;?> <?= $user->lastName;?></div>
 				<div class="panel-body">
 					<p class="description">In der Datenbank existiert ein User mit dem Namen <?= $user->firstName;?> <?= $user->lastName;?>. Dieser hat die EMail-Adresse: <a href="mailto:<?= $user->email;?>"><?= $user->email;?></a></p>
-					<?php if(Security::isAdmin()): ?>
+					<?php if(Security::isAdmin()&& $user->email != "admin.mamiblog@gmail.com"): ?>
                     <p><a title="delete_user" href="/user/delete?id=<?= $user->id ?>">delete User</a></p>
                     <?php endif ?>
 				</div>

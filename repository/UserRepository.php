@@ -30,7 +30,7 @@ class UserRepository extends Repository
      */
     public function create($firstName, $lastName, $email, $password)
     {
-        $password = sha1($password);
+        $password = crypt($password);
 
         $query = "INSERT INTO $this->tableName (firstName, lastName, email, password) VALUES (?, ?, ?, ?)";
 
@@ -47,7 +47,7 @@ class UserRepository extends Repository
     }
     public function login($email,$password)
     {
-        $sha1pass = sha1($password);
+        $sha1pass = crypt($password);
         $query = "SELECT * FROM $this->tableName WHERE email = ?";
 
         $statement = ConnectionHandler::getConnection()->prepare($query);

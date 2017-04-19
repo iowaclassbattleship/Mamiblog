@@ -1,2 +1,2 @@
 <?php
-require_once 'blog_index.php';
+header('Location: /blog');

@@ -74,6 +74,28 @@ class BlogController
         // Anfrage an die URI /user weiterleiten (HTTP 302)
         header('Location: /blog');
     }
+    public function privatedelete()
+    {
+        if (Security::isAuthenticated() && isset($_GET['id'])) {
+            $blogId = $_GET['id'];
+
+            $blogRepository = new BlogRepository();
+
+            $blog = $blogRepository->readById($blogId);
+
+            if ($blog->creator == Security::getUser()->email) {
+
+                $path = $blogRepository->get_picture_path($blogId);
+
+                if ($blogRepository->deleteById($blogId)) {
+                    unlink($path);
+
+                }
+            }
+        }
+        // Anfrage an die URI /user weiterleiten (HTTP 302)
+        header('Location: /blog/privateBlog');
+    }
     public function privateBlog(){
         $blogRepository = new BlogRepository();
 

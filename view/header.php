@@ -36,7 +36,7 @@
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li><a href="/user">Users</a></li>
-              <li><a href="/blog">Your Submissions</a></li>
+              <li><a href="/blog/privateBlog">Your Submissions</a></li>
               <li><a href="/blog/create">upload</a></li>
               <li><a href="/user/logout">Logout</a></li>
           </ul>

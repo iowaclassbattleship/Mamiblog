@@ -74,5 +74,14 @@ class BlogController
         // Anfrage an die URI /user weiterleiten (HTTP 302)
         header('Location: /blog');
     }
+    public function privateBlog(){
+        $blogRepository = new BlogRepository();
 
+        $view = new View('blog_private');
+
+        $view->title = 'Your Submission';
+        $view->heading = 'Profile';
+        $view->entry = $blogRepository->readAllPrivate();
+        $view->display();
+    }
 }

@@ -1,5 +1,4 @@
 
-
 <form class="form-horizontal" action="/blog/doCreate" method="post" enctype="multipart/form-data">
     <div class="component" data-html="true">
         <div class="form-group">

@@ -36,7 +36,7 @@
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li><a href="/user">Users</a></li>
-              <li><a href="/blog">Blogs</a></li>
+              <li><a href="/blog">Your Submissions</a></li>
               <li><a href="/blog/create">upload</a></li>
               <li><a href="/user/logout">Logout</a></li>
           </ul>
@@ -58,7 +58,6 @@
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li><a href="/user">User</a></li>
-              <li><a href="/blog">Submissions</a></li>
               <li><a href="/user/create">Register</a></li>
               <li><a href="/user/login">Login</a></li>
           </ul>

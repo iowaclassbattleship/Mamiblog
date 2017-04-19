@@ -31,12 +31,14 @@ class BlogController
             $ext = pathinfo($_FILES['picture']['name'], PATHINFO_EXTENSION);
             $title = htmlspecialchars($_POST['title']);
             $date = date("Y-m-d");
+            $private = isset($_POST['private']);
+
 
             $creator =  Security::getUser()->email;
 
             $blogRepository = new BlogRepository();
 
-            $insertId = $blogRepository->upload($picture, $title, $date, $creator);
+            $insertId = $blogRepository->upload($picture, $title, $date, $creator , $private);
 
             if($insertId > 0)
             {

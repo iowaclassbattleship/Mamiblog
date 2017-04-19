@@ -9,9 +9,15 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="col-md-2 control-label" for="comment">Title</label>
+            <label class="col-md-2 control-label" for="title">Title</label>
             <div class="col-md-4">
                 <input id="title" name="title" type="textarea" placeholder="Title" rows="4" cols="50" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label" for="private">Private</label>
+            <div class="col-md-4">
+                <input id="private" name="private" type="checkbox" value="true" placeholder="">
             </div>
         </div>
         <div class="form-group">

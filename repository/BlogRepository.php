@@ -5,12 +5,12 @@ class BlogRepository extends Repository
 {
     protected $tableName = 'blog';
 
-    public function upload($picture, $title, $date, $creator){
-        $query = "INSERT INTO $this->tableName (picture, title, date, creator) VALUES (?, ?, ?, ?)";
+    public function upload($picture, $title, $date, $creator, $private){
+        $query = "INSERT INTO $this->tableName (picture, title, date, creator, private) VALUES (?, ?, ?, ?, ?)";
 
         $statement = ConnectionHandler::getConnection()->prepare($query);
 
-        $statement->bind_param('ssss', $picture, $title, $date, $creator);
+        $statement->bind_param('ssssi', $picture, $title, $date, $creator, $private);
 
         if (!$statement->execute()) {
             return false;
@@ -54,7 +54,7 @@ class BlogRepository extends Repository
         return $path;
     }
     public function readAllSortedByNewest(){
-        $query = "SELECT * FROM {$this->tableName} ORDER BY id DESC";
+        $query = "SELECT * FROM {$this->tableName} ORDER BY id DESC ";
 
         $statement = ConnectionHandler::getConnection()->prepare($query);
         $statement->execute();

@@ -5,6 +5,7 @@
     </div>
 <?php else: ?>
     <?php foreach ($entry as $entries): ?>
+            <?php if (!$entries->private): ?>
         <div class="panel panel-default">
             <div class="panel-heading"> <?= $entries->title ;?>  <p>Date: <?= $entries->date ?></p></div>
             <div class="panel-body">
@@ -18,6 +19,7 @@
                 <?php endif; ?>
             </div>
         </div>
+                <?php endif ?>
     <?php endforeach ?>
 <?php endif ?>
 </article>

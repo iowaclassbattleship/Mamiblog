@@ -53,7 +53,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">Mamiblog</a>
+          <a class="navbar-brand" href="/blog">Mamiblog</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
@@ -69,4 +69,4 @@
 
   </nav>
   <div class="container">
-      <h1><?= $heading ?></h1
+      <h1><?= $heading ?></h1>

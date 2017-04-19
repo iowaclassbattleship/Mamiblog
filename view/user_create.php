@@ -1,9 +1,9 @@
-<form class="form-horizontal" action="/user/doCreate" method="post">
+<form class="form-horizontal" action="/user/doCreate" method="post" onsubmit="validate_registration()">
 	<div class="component" data-html="true">
 		<div class="form-group">
 		  <label class="col-md-2 control-label" for="firstName">Vorname</label>
 		  <div class="col-md-4">
-		  	<input id="firstName" name="firstName" type="text" placeholder="Vorname" class="form-control input-md" required>
+		  	<input id="firstName" name="firstName" type="text" placeholder="Vorname" class="form-control input-md" required >
 		  </div>
 		</div>
 		<div class="form-group">
@@ -32,4 +32,18 @@
 		</div>
 	</div>
 </form>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script language="javascript" type="text/javascript" src="/js/javascript_validation.js"></script>
+
 <?php
+/*
+    echo
+        "
+        <script language='JavaScript'>
+            function validate_registration() {
+                if (document.getElementById("firstName"))
+            }
+        </script>
+        ";
+*/
+?>

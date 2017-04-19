@@ -1,7 +1,12 @@
-alert("Hello! I am an alert box!!");
+$(document).ready(function() {
+    var mailRegex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-function firstNameValidation() {
-    if (getElementByID("firstName") == "mongo"){
-        getElementByID("send").disabled = true;
-    }
-}
+    $("#email").change(function () {
+        var emailValue = $("#email").val();
+        if(!emailValue.match(mailRegex)){
+            $('#email').parent().css('border-color','red');
+        }
+    });
+});
+
+

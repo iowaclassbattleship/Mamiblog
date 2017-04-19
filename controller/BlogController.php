@@ -34,11 +34,12 @@ class BlogController
 
             $title = $_POST['title'];
             $date = date("Y.m.d");
-            $comments = null;
+            $comments = "";
 
             $blogRepository = new BlogRepository();
 
             $insertId = $blogRepository->upload($picture, $title, $date, $comments);
+
             if($insertId > 0)
             {
                 $dst = $picture.$insertId.'.'.$ext;

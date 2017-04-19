@@ -12,8 +12,8 @@ class UserController
         $userRepository = new UserRepository();
 
         $view = new View('user_index');
-        $view->title = 'Benutzer';
-        $view->heading = 'Benutzer';
+        $view->title = 'User';
+        $view->heading = 'User';
         $view->users = $userRepository->readAll();
         $view->display();
     }
@@ -21,8 +21,8 @@ class UserController
     public function create()
     {
         $view = new View('user_create');
-        $view->title = 'Benutzer erstellen';
-        $view->heading = 'Benutzer erstellen';
+        $view->title = 'Register';
+        $view->heading = 'Register';
         $view->display();
     }
 
@@ -50,8 +50,8 @@ class UserController
     }
     public function login(){
         $view = new View('user_login');
-        $view->title = 'Benutzer login';
-        $view->heading = 'Benutzer login';
+        $view->title = 'Login';
+        $view->heading = 'Login';
         $view->display();
     }
     public function doLogin()

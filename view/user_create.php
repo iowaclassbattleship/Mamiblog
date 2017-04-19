@@ -1,27 +1,27 @@
 <form class="form-horizontal" action="/user/doCreate" method="post" onsubmit="validate_registration()">
 	<div class="component" data-html="true">
 		<div class="form-group">
-		  <label class="col-md-2 control-label" for="firstName">Vorname</label>
+		  <label class="col-md-2 control-label" for="firstName">First name</label>
 		  <div class="col-md-4">
-		  	<input id="firstName" name="firstName" type="text" placeholder="Vorname" class="form-control input-md" required >
+		  	<input id="firstName" name="firstName" type="text" placeholder="First name" class="form-control input-md" required >
 		  </div>
 		</div>
 		<div class="form-group">
-		  <label class="col-md-2 control-label" for="lastName">Nachname</label>
+		  <label class="col-md-2 control-label" for="lastName">Last name</label>
 		  <div class="col-md-4">
-		  	<input id="lastName" name="lastName" type="text" placeholder="Nachname" class="form-control input-md" required>
+		  	<input id="lastName" name="lastName" type="text" placeholder="Last name" class="form-control input-md" required>
 		  </div>
 		</div>
 		<div class="form-group">
-		  <label class="col-md-2 control-label" for="email">Mail</label>
+		  <label class="col-md-2 control-label" for="email">E-Mail</label>
 		  <div class="col-md-4">
-		  	<input id="email" name="email" type="email" placeholder="Mail" class="form-control input-md" required>
+		  	<input id="email" name="email" type="email" placeholder="E-Mail" class="form-control input-md" required>
 		  </div>
 		</div>
 		<div class="form-group">
-		  <label class="col-md-2 control-label" for="password">Passwort</label>
+		  <label class="col-md-2 control-label" for="password">Password</label>
 		  <div class="col-md-4">
-		  	<input id="password" name="password" type="password" placeholder="Passwort" class="form-control input-md" required>
+		  	<input id="password" name="password" type="password" placeholder="Password" class="form-control input-md" required>
 		  </div>
 		</div>
 		<div class="form-group">

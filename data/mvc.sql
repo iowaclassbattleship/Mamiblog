@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 19. Apr 2017 um 16:25
+-- Erstellungszeit: 19. Apr 2017 um 16:44
 -- Server-Version: 10.1.21-MariaDB
 -- PHP-Version: 5.6.30
 
@@ -46,7 +46,7 @@ CREATE TABLE `user` (
   `firstName` varchar(64) NOT NULL,
   `lastName` varchar(64) NOT NULL,
   `email` varchar(128) NOT NULL,
-  `password` varchar(40) NOT NULL
+  `password` varchar(512) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -54,7 +54,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `firstName`, `lastName`, `email`, `password`) VALUES
-(1, 'Admin', 'Mamiblog', 'admin.mamiblog@gmail.com', '$1$xX..mb/.$Aq4u.JPlkVVM3kgWdn1AQ/');
+(1, 'Admin', 'Mamiblog', 'admin.mamiblog@gmail.com', '$2y$10$lCccwBR4EvmN8N80wFOquusAEMGRfNx4cSPHBNYAv1bsNJlXsVAFy');
 
 --
 -- Indizes der exportierten Tabellen
@@ -86,7 +86,7 @@ ALTER TABLE `blog`
 -- AUTO_INCREMENT für Tabelle `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

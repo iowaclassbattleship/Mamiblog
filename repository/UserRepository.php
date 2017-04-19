@@ -48,17 +48,17 @@ class UserRepository extends Repository
     public function login($email,$password)
     {
         $sha1pass = sha1($password);
-        $query = "SELECT password FROM $this->tableName WHERE email = ?";
+        $query = "SELECT * FROM $this->tableName WHERE email = ?";
 
         $statement = ConnectionHandler::getConnection()->prepare($query);
         $statement->bind_param('s',$email);
         $statement->execute();
 
         $result = $statement->get_result();
-        $results = $result->fetch_array();
+        $user = $result->fetch_object();
 
-        if($sha1pass == $results["password"]){
-            $_SESSION['user']= $email;
+        if($sha1pass == $user->password){
+            $_SESSION['user']= $user;
             header('Location: /blog');
         }
         else{

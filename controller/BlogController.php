@@ -52,12 +52,22 @@ class BlogController
     }
     public function delete()
     {
-        $blogRepository = new BlogRepository();
-        $path = $blogRepository->get_picture_path($_GET['id']);
+        if (Security::isAuthenticated() && isset($_GET['id'])) {
+            $blogId = $_GET['id'];
 
-        if($blogRepository->deleteById($_GET['id'])){
-            unlink($path);
+            $blogRepository = new BlogRepository();
 
+            $blog = $blogRepository->readById($blogId);
+
+            if ($blog->creator == Security::getUser()->email) {
+
+                $path = $blogRepository->get_picture_path($blogId);
+
+                if ($blogRepository->deleteById($blogId)) {
+                    unlink($path);
+
+                }
+            }
         }
         // Anfrage an die URI /user weiterleiten (HTTP 302)
         header('Location: /blog');

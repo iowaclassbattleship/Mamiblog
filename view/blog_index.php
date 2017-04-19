@@ -10,9 +10,12 @@
             <div class="panel-body">
                 <img src="<?php echo $entries->picture ?>" alt="image" >
                 <p>uploaded by: <?= $entries->creator ;?> </p>
+
+                <?php if(Security::isAuthenticated() && Security::getUser()->email == $entries->creator) : ?>
                 <p>
-                    <a title="delete" href="/blog/delete?id=<?= $entries->id ?>">delete</a>
+                    <a title='delete' href='/blog/delete?id=<?=$entries->id?>'>delete</a>
                 </p>
+                <?php endif; ?>
             </div>
         </div>
     <?php endforeach ?>

@@ -65,7 +65,4 @@ class UserRepository extends Repository
         }
 
     }
-    public function showblog(){
-
-    }
 }

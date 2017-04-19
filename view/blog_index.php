@@ -10,7 +10,7 @@
             <div class="panel-body">
                 <img src="<?php echo $entries->picture ?>" alt="image" >
                 <p>
-                    <a title="Löschen">Löschen</a>
+                    <a title="Löschen" href="/blog/delete?id=<?= $entries->id ?>">Löschen</a>
                 </p>
             </div>
         </div>

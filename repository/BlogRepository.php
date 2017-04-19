@@ -28,4 +28,28 @@ class BlogRepository extends Repository
             return false;
         }
     }
+    public function get_picture_path($id){
+        // Query erstellen
+        $query = "SELECT picture FROM {$this->tableName} WHERE id=?";
+
+        // Datenbankverbindung anfordern und, das Query "preparen" (vorbereiten)
+        // und die Parameter "binden"
+        $statement = ConnectionHandler::getConnection()->prepare($query);
+        $statement->bind_param('i', $id);
+
+        // Das Statement absetzen
+        $statement->execute();
+
+        // Resultat der Abfrage holen
+        $result = $statement->get_result();
+        if (!$result) {
+            throw new Exception($statement->error);
+        }
+
+        // Ersten Datensatz aus dem Reultat holen
+        $results = $result->fetch_array();
+        $path = $results[0];
+        // Den gefundenen Datensatz zurückgeben
+        return $path;
+    }
 }

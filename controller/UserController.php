@@ -46,8 +46,6 @@ class UserController
     {
         $userRepository = new UserRepository();
         $userRepository->deleteById($_GET['id']);
-
-        // Anfrage an die URI /user weiterleiten (HTTP 302)
         header('Location: /user');
     }
     public function login(){

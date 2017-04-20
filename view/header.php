@@ -38,7 +38,6 @@
               <li><a href="/blog/create">upload</a></li>
               <li><a href="/user/logout">Logout</a></li>
               <li id="navright"><a id="username">User: <?= Security::getUser()->email ?></a></li>
-              <li><input type="checkbox" id="day_nightmode"><label for="day_nightmode" id="day_nightlabel">Day / Nightmode</span></label></li>
           </ul>
         </div>
         
@@ -61,7 +60,7 @@
               <li><a href="/user">User</a></li>
               <li><a href="/user/create">Register</a></li>
               <li><a href="/user/login">Login</a></li>
-              <li><input type="checkbox" id="day_nightmode"><label for="day_nightmode" id="day_nightlabel">Day / Nightmode</span></label></li>
+              <li><input type="checkbox" id="day_nightmode"></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

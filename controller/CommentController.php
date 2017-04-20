@@ -9,7 +9,7 @@ class CommentController
             if($_POST['send']){
                 $userid = Security::getUser()->id;
                 $blogid = $_GET['blogid'];
-                $comment = $_POST['commentarea'];
+                $comment = htmlspecialchars($_POST['commentarea']);
                 $time = date("Y-m-d");
                 $commentRepository = new CommentRepository();
                 $commentRepository->createComment($userid, $blogid, $comment, $time);

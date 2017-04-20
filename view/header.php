@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+      <link rel="icon" href="http://cdn.mysitemyway.com/icons-watermarks/flat-circle-white-on-black/alphanum/alphanum_lowercase-letter-m/alphanum_lowercase-letter-m_flat-circle-white-on-black_512x512.png">
     <title><?= $title ?> | Mamiblog</title>
 
     <!-- Bootstrap core CSS -->

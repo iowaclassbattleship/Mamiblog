@@ -1,11 +1,13 @@
 html{
     height:95%;
+
 }
 body {
   padding-top: 50px;
     transition: background-color 1s ease, color 1s ease;
     height: 100%;
 }
+
 #username {
   color: white;
   float: right;

@@ -9,7 +9,7 @@ class BlogController
 
         $view = new View('blog_index');
 
-        $view->title = '';
+        $view->title = 'Homepage';
         $view->heading = '';
         $view->entry = $blogRepository->readAllSortedByNewest();
         $view->display();

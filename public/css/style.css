@@ -62,4 +62,7 @@ body.night .description {
      transition: none !important;
  }
 
+#submitComment{
+    margin-top: 30px;
+}
 

@@ -9,7 +9,7 @@
     <?php if(Security::isAuthenticated()):?>
         <div class="panel-heading">
 
-            <h1>write a comment was oh immer</h1>
+            <h1></h1>
         </div>
 
         <div class="panel-body">
@@ -23,7 +23,7 @@
                     <div class="form-group">
                         <label class="col-md-1 control-label" for="send">&nbsp;</label>
                         <div class="col-md-1">
-                            <input id="send" name="send" type="submit" class="btn btn-primary">
+                            <input id="submitComment" name="send" type="submit" class="btn btn-primary">
                         </div>
                     </div>
                 </div>

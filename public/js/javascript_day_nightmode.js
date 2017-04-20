@@ -1,10 +1,13 @@
 
 $(document).ready(function() {
 
+
     $('body').addClass('notransition');
 
-    if($.cookie("isNight") == "true")
+    if($.cookie("isNight") == "true"){
         $('body').addClass('night');
+    }
+
 
 
 
@@ -14,6 +17,6 @@ $(document).ready(function() {
     function changeMode() {
         $('body').removeClass('notransition');
         $('body').toggleClass('night');
-        $.cookie("isNight", $('body').hasClass('night'));
+        $.cookie("isNight", $('body').hasClass('night'), {path: '/'});
     }
 });

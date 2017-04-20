@@ -4,7 +4,7 @@ require_once '../repository/CommentRepository.php';
 
 class CommentController
 {
-    public function create(){
+    public function docCreate($blog, $commentlist){
 
     }
 
@@ -24,10 +24,6 @@ class CommentController
     }
     public function commentView($blog, $commentlist){
         $view = new View('blog_comments');
-
-
-
-
         $view->title = 'Comments';
         $view->heading = '';
         $view->blog = $blog;

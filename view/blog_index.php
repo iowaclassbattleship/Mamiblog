@@ -21,7 +21,7 @@
 
                         <?php if(Security::isAuthenticated()):?>
                             <p>
-                                <a title='comment' href='/comment/create?id=<?=$entries->id?>'>show all comments / create comment</a>
+                                <a title='comment' href='/comment/showComments?id=<?=$entries->id?>'>show all comments / create comment</a>
                             </p>
                         <?php else :?>
                             <p>

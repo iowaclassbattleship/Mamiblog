@@ -67,6 +67,7 @@ class UserController
     }
     public function logout()
     {
+
         SESSION_DESTROY();
         header('Location: /blog');
     }

@@ -81,6 +81,8 @@ class Repository
      * dem Tabellennamen überschrieben werden. (Siehe beispiel oben).
      */
     protected $tableName = null;
+    protected $tableName1 = null;
+    protected $tableName2 = null;
 
     /**
      * Diese Funktion gibt den Datensatz mit der gegebenen id zurück.

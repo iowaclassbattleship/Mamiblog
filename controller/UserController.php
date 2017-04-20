@@ -20,6 +20,8 @@ class UserController
 
     public function create()
     {
+        $this->doCreate();
+
         $view = new View('user_create');
         $view->title = 'Register';
         $view->heading = 'Register';
@@ -28,11 +30,21 @@ class UserController
 
     public function doCreate()
     {
-        $emailPassword = '/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{1,}))$/';
-        $pwdRegex = '/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/';
+        if (isset($_POST['send'])) {
+            $emailRegex = '/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{1,}))$/';
+            $pwdRegex = '/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/';
 
-        if ($_POST['send']) {
-            if ($_POST['password'])
+            $error = false;
+
+
+
+            if (!preg_match($emailRegex, $_POST['email'])) {
+                $error = true;
+                Error::set("user_create_email", "E-Mail nicht korrekt");
+            }
+
+
+
 
 
             $firstName = $_POST['firstName'];
@@ -40,13 +52,19 @@ class UserController
             $email = $_POST['email'];
             $password = $_POST['password'];
 
-            $userRepository = new UserRepository();
-            $userRepository->create($firstName, $lastName, $email, $password);
+
+            if (!$error) {
+                $userRepository = new UserRepository();
+                $userRepository->create($firstName, $lastName, $email, $password);
+
+                // Anfrage an die URI /user weiterleiten (HTTP 302)
+                header('Location: /user');
+            }
+
         }
 
-        // Anfrage an die URI /user weiterleiten (HTTP 302)
-        header('Location: /user');
     }
+
 
     public function delete()
     {

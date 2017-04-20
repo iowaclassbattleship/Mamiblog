@@ -27,12 +27,27 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `blog` (
-  `id` int(10) UNSIGNED NOT NULL,
+  `id` int UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `picture` varchar(100) NOT NULL,
   `title` varchar(100) NOT NULL,
   `date` varchar(100) NOT NULL,
   `creator` varchar(100) NOT NULL,
   `private` tinyint(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `user`
+--
+
+CREATE TABLE `user` (
+  `id` int UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `firstName` varchar(64) NOT NULL,
+  `lastName` varchar(64) NOT NULL,
+  `email` varchar(128) NOT NULL UNIQUE,
+  `password` varchar(512) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -42,26 +57,19 @@ CREATE TABLE `blog` (
 --
 
 CREATE TABLE `comments` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `blogid` int(100) NOT NULL,
-  `userid` int(100) NOT NULL,
+  `id` int UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `blogid` int UNSIGNED NOT NULL,
+  `userid` int UNSIGNED NOT NULL,
   `comment` varchar(400) NOT NULL,
-  `time` date NOT NULL
+  `time` date NOT NULL,
+  FOREIGN KEY (blogid) REFERENCES blog(id),
+  FOREIGN KEY (userid) REFERENCES user(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
 
---
--- Tabellenstruktur für Tabelle `user`
---
 
-CREATE TABLE `user` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `firstName` varchar(64) NOT NULL,
-  `lastName` varchar(64) NOT NULL,
-  `email` varchar(128) NOT NULL,
-  `password` varchar(512) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
 
 --
 -- Daten für Tabelle `user`
@@ -69,49 +77,3 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `firstName`, `lastName`, `email`, `password`) VALUES
 (1, 'Admin', 'Mamiblog', 'admin.mamiblog@gmail.com', '$2y$10$lCccwBR4EvmN8N80wFOquusAEMGRfNx4cSPHBNYAv1bsNJlXsVAFy');
-
---
--- Indizes der exportierten Tabellen
---
-
---
--- Indizes für die Tabelle `blog`
---
-ALTER TABLE `blog`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indizes für die Tabelle `comments`
---
-ALTER TABLE `comments`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indizes für die Tabelle `user`
---
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `email` (`email`);
-
---
--- AUTO_INCREMENT für exportierte Tabellen
---
-
---
--- AUTO_INCREMENT für Tabelle `blog`
---
-ALTER TABLE `blog`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
---
--- AUTO_INCREMENT für Tabelle `comments`
---
-ALTER TABLE `comments`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
---
--- AUTO_INCREMENT für Tabelle `user`
---
-ALTER TABLE `user`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

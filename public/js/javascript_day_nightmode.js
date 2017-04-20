@@ -1,11 +1,9 @@
-$('#day_nightmode').change(changeMode);
 
-function changeMode() {
-    if($('#day_nightmode').is(':checked')) {
-        $('body').addClass('night');
-    }
+$(document).ready(function() {
 
-    else {
-        $('body').removeClass('night');
+    $('#day_nightmode').click(changeMode);
+
+    function changeMode() {
+        $('body').toggleClass('night');
     }
-}
+});

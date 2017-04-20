@@ -64,8 +64,7 @@
         </div><!--/.nav-collapse -->
       </div>
     </nav>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-      <script language="javascript" type="text/javascript" src="/js/javascript_day_nightmode.js"></script>
+
   <?php endif; ?>
 
   </nav>

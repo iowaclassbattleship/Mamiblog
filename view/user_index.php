@@ -14,6 +14,8 @@
                     <?php endif ?>
 				</div>
 			</div>
-		<?php endforeach ?>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script language="javascript" type="text/javascript" src="/js/javascript_validation.js"></script>
+    <?php endforeach ?>
 	<?php endif ?>
 </article>

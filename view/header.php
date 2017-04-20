@@ -38,6 +38,7 @@
               <li><a href="/blog/create">upload</a></li>
               <li><a href="/user/logout">Logout</a></li>
               <li id="navright"><a id="username">User: <?= Security::getUser()->email ?></a></li>
+              <li><input type="checkbox" id="day_nightmode"><label for="day_nightmode" id="day_nightlabel">Day / Nightmode</span></label></li>
           </ul>
         </div>
         
@@ -57,13 +58,16 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><a href="/user">User</a></li>
+              <li><a href="/user">User</a></li>
               <li><a href="/user/create">Register</a></li>
               <li><a href="/user/login">Login</a></li>
+              <li><input type="checkbox" id="day_nightmode"><label for="day_nightmode" id="day_nightlabel">Day / Nightmode</span></label></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script language="javascript" type="text/javascript" src="/js/javascript_day_nightmode.js"></script>
   <?php endif; ?>
 
   </nav>

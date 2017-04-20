@@ -1,6 +1,10 @@
+html{
+    height:95%;
+}
 body {
   padding-top: 50px;
     transition: background-color 1s ease, color 1s ease;
+    height: 100%;
 }
 #username {
   color: white;
@@ -40,6 +44,13 @@ body.night {
 
 body.night .description {
     color: #000;
+}
+.fixed-bottom{
+    position: fixed;
+
+}
+.container{
+    height:100%;
 }
 
 

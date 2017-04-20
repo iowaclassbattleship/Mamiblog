@@ -60,7 +60,6 @@
               <li><a href="/user">User</a></li>
               <li><a href="/user/create">Register</a></li>
               <li><a href="/user/login">Login</a></li>
-              <li><input type="checkbox" id="day_nightmode"></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

@@ -8,6 +8,12 @@ $(document).ready(function() {
         Entsprechen sie den Richtlinien werden die Felder grün gefärbt.
      */
 
+
+
+    $('#email').keydown(validateEmail);
+    $('#email').keyup(validateEmail);
+    $('#email').change(validateEmail);
+
     function validateEmail() {
         var emailValue = $('#email').val();
         if(!emailValue.match(mailRegex)){
@@ -18,9 +24,9 @@ $(document).ready(function() {
         }
     }
 
-    $('#email').keydown(validateEmail);
-    $('#email').keyup(validateEmail);
-    $('#email').change(validateEmail);
+    $('#password').keydown(validatePassword);
+    $('#password').keyup(validatePassword);
+    $('#password').change(validatePassword);
 
     function validatePassword () {
         var passwordValue = $('#password').val();
@@ -32,13 +38,16 @@ $(document).ready(function() {
         }
     }
 
-    $('#password').keydown(validatePassword);
-    $('#password').keyup(validatePassword);
-    $('#password').change(validatePassword);
+    /*$(":input").each(function() {
+        if ($(this).val() === "")
+            $(':input[type="submit"]').prop('disabled', true);
+    });
 
+    $(":input").each(function() {
+        if (!$(this).val() === "")
+            $(':input[type="submit"]').prop('disabled', true);
+    });*/
 
-
-    $(':input[type="submit"]').prop('disabled', true);
 });
 
 

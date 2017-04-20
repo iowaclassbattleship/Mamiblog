@@ -9,10 +9,13 @@ SESSION_START();
  * auf eine bestehende Datei zeigen hierhin umgeleitet.
  */
 
-require_once '../lib/Dispatcher.php';
+/*require_once '../lib/Dispatcher.php';
 require_once '../lib/View.php';
 require_once '../lib/Security.php';
 require_once '../lib/Error.php';
 
 $dispatcher = new Dispatcher();
-$dispatcher->dispatch();
+$dispatcher->dispatch();*/
+phpversion();
+
+

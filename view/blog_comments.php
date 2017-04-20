@@ -10,12 +10,10 @@
         <div class="panel-heading">
 
             <h1>write a comment was oh immer</h1>
-
-
         </div>
 
         <div class="panel-body">
-            <form action="/comment/create" method="post" >
+            <form action="/comment/doCreate?blogid=<?= $blog->id ?>" method="post" >
                 <div class="component" data-html="true">
                     <div class="form-group">
                         <div class="col-md-8">
@@ -42,10 +40,16 @@
             <h2>Comments:</h2>
             <?php foreach ($comments as $comment): ?>
                 <div class="panel-body">
-                    <p><?= $comment->user->email ?>: <?= $comment->comment ?></p>
+                    <p>
+                        <?= $comment->time ?> <?= $comment->user->email ?>: <?= $comment->comment ?>
+                        <?php if ((Security::getUserId() == $comment->userid)||Security::isAdmin()) : ?>
+                            <a title="delete" href="/comment/commentDelete?id=<?= $comment->id ?>">delete</a>
+                        <?php endif ?>
+                    </p>
                 </div>
-    </div>
+
             <?php endforeach ?>
         <?php endif ?>
+        </div>
     </div>
 </article>

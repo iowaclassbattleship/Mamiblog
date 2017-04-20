@@ -4,8 +4,20 @@ require_once '../repository/CommentRepository.php';
 
 class CommentController
 {
-    public function docCreate($blog, $commentlist){
-
+    public function doCreate(){
+        if(Security::isAuthenticated()){
+            if($_POST['send']){
+                $userid = Security::getUser()->id;
+                $blogid = $_GET['blogid'];
+                $comment = $_POST['commentarea'];
+                $time = date("Y-m-d");
+                $commentRepository = new CommentRepository();
+                $commentRepository->createComment($userid, $blogid, $comment, $time);
+                header('Location: /comment/showComments?id='.$blogid);
+            }
+        }else{
+            echo'fuck off';
+        }
     }
 
 
@@ -31,4 +43,19 @@ class CommentController
         $view->display();
 
     }
+    public function commentDelete(){
+        if (Security::isAuthenticated()) {
+            $commentid = $_GET['id'];
+            $commentRepository = new CommentRepository();
+
+            $comment = $commentRepository->readById($commentid);
+
+            if ($comment->userid == Security::getUserId()) {
+                if($commentRepository->deleteById($commentid)){
+                    header('Location: /comment/showComments?id='.$comment->blogid);
+                }
+
+                }
+            }
+        }
 }

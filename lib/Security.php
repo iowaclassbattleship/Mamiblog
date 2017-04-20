@@ -16,7 +16,11 @@ class Security
     }
 
     public static function getUser() {
-        return $_SESSION[Security::SESSION_USER];
+        return (!empty($_SESSION[Security::SESSION_USER])) ? $_SESSION[Security::SESSION_USER] : null;
+    }
+
+    public static function getUserId() {
+        return (!empty($_SESSION[Security::SESSION_USER])) ? $_SESSION[Security::SESSION_USER]->id : 0;
     }
 
     public static function isAdmin(){

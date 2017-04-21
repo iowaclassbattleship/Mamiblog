@@ -49,10 +49,11 @@ class UserController
                 $userRepository = new UserRepository();
                 if(!$userRepository->create($firstName, $lastName, $email, $password)){
                     Message::set("user_create_email", "There is already a user with this email.");
+                }else{
+                    Message::set("user_create_email", "Registration successfull <a href=\"/user/login\">Login</a>");
                 }
 
                 // Anfrage an die URI /user weiterleiten (HTTP 302)
-                header('Location: /user');
             }
 
         }

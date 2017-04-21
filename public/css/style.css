@@ -30,8 +30,8 @@ img {
 }
 textarea {
     width: 100%;
-    max-width :700px;
-    height: 100px;
+    max-width :100%;
+    height: 600px;
     max-height: 100px;
 }
 #day_nightmode {
@@ -61,8 +61,10 @@ body.night .description {
      -o-transition: none !important;
      transition: none !important;
  }
-
-#submitComment{
-    margin-top: 30px;
+.comment{
+    display: block;
+    word-break: break-all;
+    word-wrap: break-word;
+    white-space: normal;
 }
 

@@ -26,10 +26,10 @@
         <div class="panel-body">
         <?php if (empty($comments)): ?>
             <div class="panel-body">
-                <h2 class="item title blacktext">Hoopla! no comments found.</h2>
+                <h2 class="item title blacktext commentbox">Hoopla! no comments found.</h2>
             </div>
         <?php else: ?>
-            <h2 class="blacktext">Comments:</h2>
+            <h3 class="blacktext commentbox">Comments:</h3>
             <?php foreach ($comments as $comment): ?>
                 <div class="panel-body">
                     <p class="col-md-0 blacktext"><?= $comment->time ?></p>

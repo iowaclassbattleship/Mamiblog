@@ -66,12 +66,16 @@ body.night .description {
     word-break: break-all;
     word-wrap: break-word;
     white-space: normal;
+
 }
 .blacktext {
     color:black!important;
 }
 .poster_date{
     color:#333!important;
+}
+.commentbox{
+    margin-top:-20px;
 }
 
 

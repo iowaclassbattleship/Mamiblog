@@ -17,7 +17,7 @@
                     </div>
                     <div class="form-group">
                         <div class="col-md-1">
-                            <input id="submitComment" name="send" type="submit" class="btn btn-primary">
+                            <input id="submitComment" name="send" type="submit" class="btn btn-primary" value="Submit">
                         </div>
                     </div>
                 </div>

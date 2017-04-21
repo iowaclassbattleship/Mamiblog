@@ -13,7 +13,7 @@
                     <img src="../<?php echo $entries->picture ?>" alt="image" >
                     <p class="poster_date">uploaded by: <?= $entries->creator ;?> </p>
                         <p>
-                            <a title='delete' href='/blog/privatedelete?id=<?=$entries->id?>'>delete</a>
+                            <a title='delete' href='/blog/delete?id=<?=$entries->id?>'>delete</a>
                         </p>
 
                 </div>

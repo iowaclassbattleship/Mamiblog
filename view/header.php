@@ -35,7 +35,7 @@
           <ul class="nav navbar-nav">
             <li><a href="/user">Users</a></li>
               <li><a href="/blog/privateBlog">Your Submissions</a></li>
-              <li><a href="/blog/create">upload</a></li>
+              <li><a href="/blog/create">Upload</a></li>
               <li><a href="/user/logout">Logout</a></li>
               <li id="navright"><a id="username">User: <?= Security::getUser()->email ?></a></li>
           </ul>

@@ -16,10 +16,13 @@ class BlogController
     }
     public function create()
     {
-        $view = new View('blog_create');
-        $view->title = 'Submit Image';
-        $view->heading = 'Submit Image';
-        $view->display();
+        if(Security::isAuthenticated()){
+            $view = new View('blog_create');
+            $view->title = 'Submit Image';
+            $view->heading = 'Submit Image';
+            $view->display();
+        }
+    echo'Sie sind nicht angemeldet';
 
     }
     public function doCreate()
@@ -37,9 +40,9 @@ class BlogController
             $creator =  Security::getUser()->email;
 
             $blogRepository = new BlogRepository();
-
-            $insertId = $blogRepository->upload($picture, $title, $date, $creator , $private);
-
+            if($ext == "jpg"|| $ext == "gif" || $ext == "png" || $ext == "svg"){
+                $insertId = $blogRepository->upload($picture, $title, $date, $creator , $private);
+            }
             if($insertId > 0)
             {
                 $dst = $picture.$insertId.'.'.$ext;
@@ -47,6 +50,8 @@ class BlogController
                 if (move_uploaded_file($picture_array['tmp_name'], $dst)) {
                     $blogRepository->update_picture($insertId, $dst);
                 }
+            }else{
+                echo'Sie können nur Bilder hochladen!';
             }
 
         }

@@ -31,7 +31,6 @@ class UserController
     public function doCreate()
     {
         if (isset($_POST['send'])) {
-            $pwdRegex = '/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/';
 
             $error = false;
 
@@ -48,7 +47,10 @@ class UserController
 
             if (!$error) {
                 $userRepository = new UserRepository();
-                $userRepository->create($firstName, $lastName, $email, $password);
+                if(!$userRepository->create($firstName, $lastName, $email, $password)){
+                    Error::set("user_create_email", "Es existiert schon ein User mit dieser Email-adresse.");
+                    die();
+                }
 
                 // Anfrage an die URI /user weiterleiten (HTTP 302)
                 header('Location: /user');

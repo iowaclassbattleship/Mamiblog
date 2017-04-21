@@ -38,15 +38,6 @@ $(document).ready(function() {
         }
     }
 
-    /*$(":input").each(function() {
-        if ($(this).val() === "")
-            $(':input[type="submit"]').prop('disabled', true);
-    });
-
-    $(":input").each(function() {
-        if (!$(this).val() === "")
-            $(':input[type="submit"]').prop('disabled', true);
-    });*/
 
 });
 

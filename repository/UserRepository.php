@@ -38,8 +38,7 @@ class UserRepository extends Repository
         $statement->bind_param('ssss', $firstName, $lastName, $email, $password);
 
         if (!$statement->execute()) {
-            echo'Es existiert schon ein User mit dieser Email-adresse.';
-            throw new Exception($statement->error);
+            return false;
 
         }
 

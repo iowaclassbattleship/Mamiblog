@@ -9,6 +9,12 @@ class CommentRepository extends Repository
     protected $tableName1 = 'blog';
     protected $tableName2 = 'user';
 
+    /**
+     * @param $blogid
+     * @return array
+     * @throws Exception
+     */
+    //returns all comments of a blog
     public function getComments($blogid){
         $query = "SELECT * FROM $this->tableName where blogid = ? ORDER BY id DESC";
         $statement = ConnectionHandler::getConnection()->prepare($query);
@@ -32,6 +38,15 @@ class CommentRepository extends Repository
         }
         return $rows;
     }
+
+    /**
+     * @param $userid
+     * @param $blogid
+     * @param $comment
+     * @param $time
+     * @return bool
+     */
+    //saves comment in database
     public function createComment($userid, $blogid, $comment, $time){
         $query = "INSERT INTO $this->tableName (userid, blogid, comment, time) VALUES (?, ?, ?, ?)";
         $statement = ConnectionHandler::getConnection()->prepare($query);
@@ -41,7 +56,5 @@ class CommentRepository extends Repository
             return false;
         }
         return ConnectionHandler::getConnection()->insert_id;
-
     }
-
 }

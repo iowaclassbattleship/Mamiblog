@@ -1,19 +1,14 @@
 $(document).ready(function() {
     var mailRegex = /^([a-zA-Z]+@[a-zA-Z]{1,})\w+$/;
     var pwdRegex = /^(?=.+[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/;
-
     /*
         Validierung von E-Mail und Passworteingabe.
         Bei Eingaben die nicht den Richtlinien entsprechen wird das Eingabefeld rot gefärbt.
         Entsprechen sie den Richtlinien werden die Felder grün gefärbt.
      */
-
-
-
     $('#email').keydown(validateEmail);
     $('#email').keyup(validateEmail);
     $('#email').change(validateEmail);
-
     function validateEmail() {
         var emailValue = $('#email').val();
         if(!emailValue.match(mailRegex)){
@@ -23,11 +18,9 @@ $(document).ready(function() {
             $('#email').css('background-color', '#b3ffb3');
         }
     }
-
     $('#password').keydown(validatePassword);
     $('#password').keyup(validatePassword);
     $('#password').change(validatePassword);
-
     function validatePassword () {
         var passwordValue = $('#password').val();
         if(!passwordValue.match(pwdRegex)){
@@ -37,13 +30,8 @@ $(document).ready(function() {
             $('#password').css('background-color', '#b3ffb3');
         }
     }
-
     $("#send").attr('disabled','disabled')
-
-
-
     $(':input').keyup(function() {
-
         try {
             var validator = $("#registration_form").validate({
                 rules: {
@@ -63,14 +51,12 @@ $(document).ready(function() {
                     email: "",
                 },
                 onkeyup: function (element, e) {
-
                     if(validator.form())
                         $("#send").removeAttr('disabled');
                 }
             });
         }catch(err){} //dirty
     });
-
 });
 
 

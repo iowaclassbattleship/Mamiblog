@@ -1,11 +1,6 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: bschlm
- * Date: 20.04.2017
- * Time: 14:20
- */
+//Message class to get proper error
 class Message
 {
     private static $errors = [];

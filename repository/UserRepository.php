@@ -28,22 +28,32 @@ class UserRepository extends Repository
      *
      * @throws Exception falls das Ausführen des Statements fehlschlägt
      */
+    /**
+     * @param $firstName
+     * @param $lastName
+     * @param $email
+     * @param $password
+     * @return bool
+     */
+    //saves user in database
     public function create($firstName, $lastName, $email, $password)
     {
         $password = password_hash($password, PASSWORD_DEFAULT );
-
         $query = "INSERT INTO $this->tableName (firstName, lastName, email, password) VALUES (?, ?, ?, ?)";
-
         $statement = ConnectionHandler::getConnection()->prepare($query);
         $statement->bind_param('ssss', $firstName, $lastName, $email, $password);
-
         if (!$statement->execute()) {
             return false;
-
         }
-
         return $statement->insert_id;
     }
+
+    /**
+     * @param $email
+     * @param $password
+     * @return bool
+     */
+    //check if login is valid
     public function login($email,$password)
     {
         $query = "SELECT * FROM $this->tableName WHERE email = ?";

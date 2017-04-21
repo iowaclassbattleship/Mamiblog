@@ -27,7 +27,7 @@
         <div class="panel-body">
         <?php if (empty($comments)): ?>
             <div class="panel-body">
-                <h2 class="item title">Hoopla! no comments found.</h2>
+                <h2 class="item title blacktext">Hoopla! no comments found.</h2>
             </div>
 
         <?php else: ?>

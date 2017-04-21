@@ -1,10 +1,4 @@
-/*!
- * jQuery Cookie Plugin v1.4.1
- * https://github.com/carhartl/jquery-cookie
- *
- * Copyright 2013 Klaus Hartl
- * Released under the MIT license
- */
+//downloaded by https://github.com/carhartl/jquery-cookie
 (function (factory) {
 	if (typeof define === 'function' && define.amd) {
 		// AMD
@@ -17,13 +11,10 @@
 		factory(jQuery);
 	}
 }(function ($) {
-
 	var pluses = /\+/g;
-
 	function encode(s) {
 		return config.raw ? s : encodeURIComponent(s);
 	}
-
 	function decode(s) {
 		return config.raw ? s : decodeURIComponent(s);
 	}
@@ -101,9 +92,7 @@
 
 		return result;
 	};
-
 	config.defaults = {};
-
 	$.removeCookie = function (key, options) {
 		if ($.cookie(key) === undefined) {
 			return false;
@@ -113,5 +102,4 @@
 		$.cookie(key, '', $.extend({}, options, { expires: -1 }));
 		return !$.cookie(key);
 	};
-
 }));

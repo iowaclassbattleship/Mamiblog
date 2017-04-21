@@ -61,10 +61,16 @@ body.night .description {
      -o-transition: none !important;
      transition: none !important;
  }
-.comment{
+.comment {
     display: block;
     word-break: break-all;
     word-wrap: break-word;
     white-space: normal;
+}
+.blacktext {
+    color:black!important;
+}
+.poster_date{
+    color:#333!important;
 }
 

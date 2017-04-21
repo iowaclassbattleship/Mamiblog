@@ -7,11 +7,6 @@
         <img src="/<?= $blog->picture ?>" />
     </div>
     <?php if(Security::isAuthenticated()):?>
-        <div class="panel-heading">
-
-            <h1></h1>
-        </div>
-
         <div class="panel-body">
             <form action="/comment/doCreate?blogid=<?= $blog->id ?>" method="post" >
                 <div class="component" data-html="true">
@@ -36,10 +31,12 @@
             </div>
 
         <?php else: ?>
-            <h2>Comments:</h2>
+            <h2 class="blacktext">Comments:</h2>
             <?php foreach ($comments as $comment): ?>
                 <div class="panel-body">
-                    <p class="col-md-0"><?= $comment->time ?></p> <p class="col-md-0"><?= $comment->user->email ?>:</p><p class="col-md-12 comment"> <?= $comment->comment ?></p>
+                    <p class="col-md-0 blacktext"><?= $comment->time ?></p>
+                    <p class="col-md-0 blacktext"><?= $comment->user->email ?>:</p>
+                    <p class="col-md-12 comment blacktext"> <?= $comment->comment ?></p>
                         <?php if ((Security::getUserId() == $comment->userid)||Security::isAdmin()) : ?>
                             <a title="delete" href="/comment/commentDelete?id=<?= $comment->id ?>">delete</a>
                         <?php endif ?>

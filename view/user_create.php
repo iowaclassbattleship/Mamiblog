@@ -1,4 +1,4 @@
-<form class="form-horizontal" action="/user/create" method="post" onsubmit="validate_registration()">
+<form id="registration_form" class="form-horizontal" action="/user/create" method="post" onsubmit="validate_registration()">
 	<div class="component" data-html="true">
 		<div class="form-group">
 		  <label class="col-md-2 control-label" for="firstName">First name</label>

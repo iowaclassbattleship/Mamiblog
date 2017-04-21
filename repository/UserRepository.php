@@ -55,12 +55,19 @@ class UserRepository extends Repository
         $result = $statement->get_result();
         $user = $result->fetch_object();
 
+        if($user == null)
+        {
+            Message::set("login_error", "User not found");
+            return false;
+        }
+
         if(password_verify($password, $user->password)){
             $_SESSION['user']= $user;
-            header('Location: /blog');
+            return true;
         }
         else{
-            echo'fehler geschlagen';
+            Message::set("login_error", "Wrong password");
+            return false;
         }
 
     }

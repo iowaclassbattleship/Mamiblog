@@ -1,4 +1,5 @@
 <article class="hreview open special">
+    <p><?= Message::get("logout")?></p>
     <link rel="stylesheet" href="/css/style.css">
 	<?php if (empty($entry)): ?>
     <div class="dhd">

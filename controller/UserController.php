@@ -36,7 +36,7 @@ class UserController
 
             if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
                 $error = true;
-                Error::set("user_create_email", "E-Mail nicht korrekt");
+                Message::set("user_create_email", "Email not correct.");
             }
 
             $firstName = htmlspecialchars($_POST['firstName']);
@@ -48,8 +48,7 @@ class UserController
             if (!$error) {
                 $userRepository = new UserRepository();
                 if(!$userRepository->create($firstName, $lastName, $email, $password)){
-                    Error::set("user_create_email", "Es existiert schon ein User mit dieser Email-adresse.");
-                    die();
+                    Message::set("user_create_email", "There is already a user with this email.");
                 }
 
                 // Anfrage an die URI /user weiterleiten (HTTP 302)
@@ -68,6 +67,8 @@ class UserController
         header('Location: /user');
     }
     public function login(){
+        $this->doLogin();
+
         $view = new View('user_login');
         $view->title = 'Login';
         $view->heading = 'Login';
@@ -75,12 +76,14 @@ class UserController
     }
     public function doLogin()
     {
-        if ($_POST['send']) {
+        if (!empty($_POST['send'])) {
             $email = $_POST['email'];
             $password = $_POST['password'];
 
             $userRepository = new UserRepository();
-            $userRepository->login($email,$password);
+            if($userRepository->login($email,$password)){
+                header('Location: /blog');
+            }
         }
 
     }

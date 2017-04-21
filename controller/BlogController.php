@@ -17,17 +17,22 @@ class BlogController
     public function create()
     {
         if(Security::isAuthenticated()){
+            $this->doCreate();
+
             $view = new View('blog_create');
             $view->title = 'Submit Image';
             $view->heading = 'Submit Image';
             $view->display();
+
+        }else{
+            echo'You are not logged in!';
         }
-    echo'Sie sind nicht angemeldet';
+
 
     }
     public function doCreate()
     {
-        if ($_POST['send']) {
+        if (isset($_POST['send'])) {
             $destination = "images/uploads";
             $picture_array = $_FILES['picture'];
             $picture = $destination.'/';
@@ -40,22 +45,25 @@ class BlogController
             $creator =  Security::getUser()->email;
 
             $blogRepository = new BlogRepository();
-            if($ext == "jpg"|| $ext == "gif" || $ext == "png" || $ext == "svg"){
-                $insertId = $blogRepository->upload($picture, $title, $date, $creator , $private);
-            }
-            if($insertId > 0)
-            {
-                $dst = $picture.$insertId.'.'.$ext;
 
-                if (move_uploaded_file($picture_array['tmp_name'], $dst)) {
-                    $blogRepository->update_picture($insertId, $dst);
+            if($ext == "jpg"|| $ext == "gif" || $ext == "PNG" || $ext == "svg") {
+                $insertId = $blogRepository->upload($picture, $title, $date, $creator, $private);
+                if ($insertId > 0) {
+                    $dst = $picture . $insertId . '.' . $ext;
+                    if (move_uploaded_file($picture_array['tmp_name'], $dst)) {
+                        if($blogRepository->update_picture($insertId, $dst)){
+                            if ($private == 'true') {
+                                Message::set("upload", "Upload successful! Go to <a href=\"/blog/privateBlog\">Private Blog</a>");
+                            } else {
+                                Message::set("upload", "Upload successful! Go to <a href=\"/blog\">Blog</a>");
+                            }
+                        }
+                    }
                 }
             }else{
-                echo'Sie können nur Bilder hochladen!';
+                Message::set("upload", "You can only upload Pictures");
             }
-
         }
-        header('Location: /blog');
     }
     public function delete()
     {

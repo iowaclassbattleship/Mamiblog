@@ -16,7 +16,7 @@
 		  <label class="col-md-2 control-label" for="email">E-Mail</label>
 		  <div class="col-md-4">
 		  	<input id="email" name="email" type="email" placeholder="E-Mail" class="form-control input-md" required value="<?= (!empty($_POST['email'])) ? $_POST['email']: "" ?>">
-              <?= Error::get("user_create_email") ?>
+              <?= Message::get("user_create_email") ?>
 		  </div>
 		</div>
 		<div class="form-group">

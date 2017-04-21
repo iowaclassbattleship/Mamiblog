@@ -28,6 +28,8 @@ class BlogRepository extends Repository
         if (!$statement->execute()) {
             return false;
         }
+
+        return true;
     }
     public function get_picture_path($id){
         // Query erstellen

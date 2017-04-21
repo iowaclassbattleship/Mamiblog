@@ -1,5 +1,6 @@
-<form class="form-horizontal" action="/user/doLogin" method="post">
+<form class="form-horizontal" action="/user/login" method="post">
     <div class="component" data-html="true">
+        <p><?= Message::get("login_error") ?></p>
         <div class="form-group">
             <label class="col-md-2 control-label" for="textinput">E-Mail</label>
             <div class="col-md-4">

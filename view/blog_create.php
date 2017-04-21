@@ -1,7 +1,9 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 <link rel="stylesheet" href="/css/style.css">
-<form class="form-horizontal" action="/blog/doCreate" method="post" enctype="multipart/form-data">
+
+<form class="form-horizontal" action="/blog/create" method="post" enctype="multipart/form-data">
     <div class="component" data-html="true">
+        <p><?php echo Message::get("upload")?></p>
         <div class="form-group">
             <label class="col-md-2 control-label" for="picture">Picture</label>
             <div class="col-md-4">

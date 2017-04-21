@@ -1,4 +1,6 @@
 //downloaded by https://github.com/carhartl/jquery-cookie
+// JQuery Code for generating Cookie to send to Server
+// Cookie shall ensure that the Day- / Nightmodus remains while on he web page
 (function (factory) {
 	if (typeof define === 'function' && define.amd) {
 		// AMD

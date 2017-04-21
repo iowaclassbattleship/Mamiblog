@@ -6,6 +6,7 @@ $(document).ready(function() {
         Bei Eingaben die nicht den Richtlinien entsprechen wird das Eingabefeld rot gefärbt.
         Entsprechen sie den Richtlinien werden die Felder grün gefärbt.
      */
+    // change color of input field email depending on input matching regex
     $('#email').keydown(validateEmail);
     $('#email').keyup(validateEmail);
     $('#email').change(validateEmail);
@@ -18,6 +19,8 @@ $(document).ready(function() {
             $('#email').css('background-color', '#b3ffb3');
         }
     }
+
+    // change color of input field password depending on input matching regex
     $('#password').keydown(validatePassword);
     $('#password').keyup(validatePassword);
     $('#password').change(validatePassword);
@@ -30,6 +33,10 @@ $(document).ready(function() {
             $('#password').css('background-color', '#b3ffb3');
         }
     }
+
+    // Submit button shall only be clickable when all the inputs have been validated
+    // this task is achieved by implementing the JQuery validate() Plugin
+    // https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js
     $("#send").attr('disabled','disabled')
     $(':input').keyup(function() {
         try {
@@ -55,7 +62,10 @@ $(document).ready(function() {
                         $("#send").removeAttr('disabled');
                 }
             });
-        }catch(err){} //dirty
+        }
+        // Errors shall be ignored
+        // Front End will not notice the discrepancy in the CodeStyle
+        catch(err){} //dirty
     });
 });
 

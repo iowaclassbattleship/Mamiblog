@@ -1,3 +1,5 @@
+// JQuery for a Day-/ Nightmode
+// JQuery generates a Cookie to keel the night mode even when changing site
 $(document).ready(function() {
     $('body').addClass('notransition');
 

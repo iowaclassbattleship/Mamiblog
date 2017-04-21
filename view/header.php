@@ -33,10 +33,10 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><a href="/user">Users</a></li>
-              <li><a href="/blog/privateBlog">Your Submissions</a></li>
-              <li><a href="/blog/create">Upload</a></li>
-              <li><a href="/user/logout">Logout</a></li>
+            <li><a href="/user"><span class="glyphicon glyphicon-user"></span> Users</a></li>
+              <li><a href="/blog/privateBlog"><span class="glyphicon glyphicon-picture"></span> Your Submissions</a></li>
+              <li><a href="/blog/create"><span class="glyphicon glyphicon-cloud-upload"></span> Upload</a></li>
+              <li><a href="/user/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
               <li id="navright"><a id="username">User: <?= Security::getUser()->email ?></a></li>
           </ul>
         </div>
@@ -57,9 +57,9 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-              <li><a href="/user">User</a></li>
-              <li><a href="/user/create">Register</a></li>
-              <li><a href="/user/login">Login</a></li>
+              <li><a href="/user"><span class="glyphicon glyphicon-user"></span> User</a></li>
+              <li><a href="/user/create"><span class="glyphicon glyphicon-heart"></span> Register</a></li>
+              <li><a href="/user/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

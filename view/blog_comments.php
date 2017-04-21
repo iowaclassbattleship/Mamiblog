@@ -1,6 +1,5 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 <link rel="stylesheet" href="/css/style.css">
-
 <article class="hreview open special">
     <div class="panel panel-default">
     <div>
@@ -29,7 +28,6 @@
             <div class="panel-body">
                 <h2 class="item title blacktext">Hoopla! no comments found.</h2>
             </div>
-
         <?php else: ?>
             <h2 class="blacktext">Comments:</h2>
             <?php foreach ($comments as $comment): ?>
@@ -42,7 +40,6 @@
                         <?php endif ?>
                     </p>
                 </div>
-
             <?php endforeach ?>
         <?php endif ?>
         </div>

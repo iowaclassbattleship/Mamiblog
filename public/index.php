@@ -8,7 +8,7 @@ SESSION_START();
  * Wie in der .htaccess Datei beschrieben, werden alle Anfragen, welche nicht
  * auf eine bestehende Datei zeigen hierhin umgeleitet.
  */
-
+//import stylesheet and bootstrap
 require_once '../lib/Dispatcher.php';
 require_once '../lib/View.php';
 require_once '../lib/Security.php';

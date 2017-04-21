@@ -58,7 +58,7 @@ class BlogController
             //saves current user in $creator
             $creator = Security::getUser()->email;
             $blogRepository = new BlogRepository();
-            if ($ext == "jpg" || $ext == "gif" || $ext == "PNG" || $ext == "svg") {
+            if ($ext == "jpg" || $ext == "gif" || $ext == "png" || $ext == "svg"|| $ext == "JPG"|| $ext == "GIF" || $ext == "SVG") {
                 //call to upload
                 $insertId = $blogRepository->upload($picture, $title, $date, $creator, $private);
                 //moves image to folder only if sqlquerry successful
@@ -108,7 +108,6 @@ class BlogController
         if (Security::isAuthenticated() && isset($_GET['id'])) {
             $this->doChangeTitle();
             $view = new View('blog_change');
-            $blogRepository = new BlogRepository();
             $view->id = $_GET['id'];
             $view->title = 'Change title';
             $view->heading = 'Change title';
@@ -121,7 +120,7 @@ class BlogController
     private function doChangeTitle()
     {
         if (isset($_POST['send'])) {
-            $newtitle = $_POST['title'];
+            $newtitle = htmlspecialchars($_POST['title']);
             $blogRepository = new BlogRepository();
             $blog = $blogRepository->readById($_GET['id']);
             if (($blog->creator == Security::getUser()->email) || Security::isAdmin()) {
